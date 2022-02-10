@@ -15,6 +15,7 @@
             "app\\":"app"
         },
         "files":[
+            "app/helpers/json.php"
         ]
     }
 }
