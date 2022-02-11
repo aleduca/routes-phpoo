@@ -1,6 +1,5 @@
 <?php $this->layout('master', ['title' => $title]) ?>
 
-
 <h1>User</h1>
 
 <form action="/user/update/12" method="post">
