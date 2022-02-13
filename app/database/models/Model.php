@@ -25,6 +25,7 @@ abstract class Model
 
     public function setPagination(Pagination $pagination)
     {
+        $pagination->setTotalItems($this->count());
         $this->pagination = $pagination->dump();
     }
 
