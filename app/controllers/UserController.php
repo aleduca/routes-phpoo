@@ -3,6 +3,8 @@ namespace app\controllers;
 
 use app\controllers\Controller;
 use app\core\Request;
+use app\support\Csrf;
+use app\support\Validate;
 
 class UserController extends Controller
 {
@@ -18,8 +20,6 @@ class UserController extends Controller
 
     public function update($params)
     {
-        $response = Request::query('page');
-        dd($response);
-        // dd(Request::input('firstName'));
+        dd(Request::only('password'));
     }
 }

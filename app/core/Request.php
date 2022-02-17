@@ -25,13 +25,21 @@ class Request
         $fieldsPost = self::all();
         $fieldsPostkeys = array_keys($fieldsPost);
 
+        // dd($fieldsPostkeys);
+
+        $arr = [];
         foreach ($fieldsPostkeys as $index => $value) {
-            if ($value !== (is_string($only) ? $only : (isset($only[$index]) ? $only[$index] : null))) {
-                unset($fieldsPost[$value]);
+            $onlyField = (is_string($only) ? $only : (isset($only[$index]) ? $only[$index] : null));
+            if (isset($fieldsPost[$onlyField])) {
+                $arr[$onlyField] = $fieldsPost[$onlyField];
             }
+            // echo $value . ' ' .$onlyField .'<br />';
+            // if ($value !== $onlyField) {
+            //     unset($fieldsPost[$value]);
+            // }
         }
 
-        return $fieldsPost;
+        return $arr;
     }
 
     public static function excepts(string|array $excepts)
