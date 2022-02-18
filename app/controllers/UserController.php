@@ -20,6 +20,12 @@ class UserController extends Controller
 
     public function update($params)
     {
-        dd(Request::only('password'));
+        $validate = new Validate;
+        $validate->validate([
+            // 'firstName' => 'required',
+            // 'lastName' => 'required',
+            // 'email' => 'email|required',
+            'password' => 'maxLen:10|required',
+        ]);
     }
 }
