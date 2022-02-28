@@ -28,7 +28,7 @@ class Csrf
 
         // dd($token['token'], $_SESSION['token']);
 
-        if ($_SESSION['token'] !== $token['token']) {
+        if (empty($token) || $_SESSION['token'] !== $token['token']) {
             throw new Exception("Token inválido");
         }
 

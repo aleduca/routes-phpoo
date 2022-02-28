@@ -7,6 +7,6 @@ function flash(string $index, string $css = '')
     // if (isset($_SESSION[$index])) {
     $message = Flash::get($index);
 
-    return "<span class='{$css}'>{$message}</span>";
+    return "<span style='{$css}'>{$message}</span>";
     // }
 }

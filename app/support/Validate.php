@@ -51,5 +51,13 @@ class Validate
                 }
             }
         }
+
+        Csrf::validateToken();
+
+        if (in_array(null, $inputsValidation, true)) {
+            return null;
+        }
+
+        return $inputsValidation[$field];
     }
 }
