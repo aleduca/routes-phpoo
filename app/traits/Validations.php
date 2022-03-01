@@ -26,6 +26,7 @@ trait Validations
     {
         if (!filter_input(INPUT_POST, $field, FILTER_VALIDATE_EMAIL)) {
             Flash::set($field, "Esse campo tem que ter um email válido");
+            return null;
         }
 
         return strip_tags(Request::input($field), '<p><b><ul><span><em>');
