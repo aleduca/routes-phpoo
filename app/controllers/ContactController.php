@@ -32,9 +32,9 @@ class ContactController extends Controller
         $sent = $email->from($validated['email'], 'Alexandre Cardoso')
         ->to('xandecar@hotmail.com')
         ->message($validated['message'])
+        ->template('contact', ['name' => 'Alexandre' ])
         ->subject($validated['subject'])
         ->send();
-
 
         if ($sent) {
             Flash::set('sent_success', 'Email enviado com sucesso');
